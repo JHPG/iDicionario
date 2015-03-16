@@ -12,7 +12,7 @@
 @interface LetrasViewController : UIViewController //<LetraViewDelegate>
 
 @property NSMutableArray *letras;
-@property int index;
+//@property int index;
 
 //+(instancetype)sharedInstance;
 

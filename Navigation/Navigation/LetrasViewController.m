@@ -28,20 +28,13 @@
 //    return instance;
 //}
 
-
 -(void) viewDidLoad {
     [super viewDidLoad];
     
-    _letras = [[NSMutableArray alloc] init];
+    UINavigationItem *item = self.navigationController.navigationBar.topItem;
+    [item setTitle:@"Inicio"];
     
-    Letra *letraA = [[Letra alloc] init];
-    [letraA setLetra:@"A"];
-    
-    //Preencher vetor de palavras
-    [_letras addObject:letraA];
-    
-    //Inicializa view com o objeto atual
-    LetraView *view = [[LetraView alloc] initWithLetra: [_letras objectAtIndex:0]];
+    LetraView *view = [[LetraView alloc] init];
     [self showViewController:view sender:nil];
 }
 

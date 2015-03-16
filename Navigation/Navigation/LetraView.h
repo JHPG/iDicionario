@@ -23,12 +23,17 @@
 
 
 @property Letra *letra;
+@property int index;
+@property NSMutableArray *letras;
 
 //@property (nonatomic, assign) id<LetraViewDelegate> delegate;
 
 -(instancetype)initWithLetra: (Letra*) l;
+
+-(void)previous:(id)sender;
 -(void)next:(id)sender;
--(instancetype) novo;
+
+-(instancetype) novo: (Letra*) obj;
 
 
 
