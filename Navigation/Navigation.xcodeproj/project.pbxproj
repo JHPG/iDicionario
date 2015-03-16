@@ -12,15 +12,15 @@
 		27156F5118B76AF50053A99C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27156F5018B76AF50053A99C /* UIKit.framework */; };
 		27156F5718B76AF50053A99C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 27156F5518B76AF50053A99C /* InfoPlist.strings */; };
 		27156F5918B76AF50053A99C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 27156F5818B76AF50053A99C /* main.m */; };
-		27156F5D18B76AF50053A99C /* MackenzieAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 27156F5C18B76AF50053A99C /* MackenzieAppDelegate.m */; };
+		27156F5D18B76AF50053A99C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 27156F5C18B76AF50053A99C /* AppDelegate.m */; };
 		27156F5F18B76AF50053A99C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27156F5E18B76AF50053A99C /* Images.xcassets */; };
 		27156F6618B76AF50053A99C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27156F6518B76AF50053A99C /* XCTest.framework */; };
 		27156F6718B76AF50053A99C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27156F4C18B76AF50053A99C /* Foundation.framework */; };
 		27156F6818B76AF50053A99C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27156F5018B76AF50053A99C /* UIKit.framework */; };
 		27156F7018B76AF50053A99C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 27156F6E18B76AF50053A99C /* InfoPlist.strings */; };
 		27156F7218B76AF50053A99C /* NavigationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 27156F7118B76AF50053A99C /* NavigationTests.m */; };
-		27156F7D18BA89430053A99C /* LetraAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27156F7C18BA89430053A99C /* LetraAViewController.m */; };
 		27156F8018BA8B210053A99C /* LetraBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27156F7F18BA8B210053A99C /* LetraBViewController.m */; };
+		D6FB2D3F1AB70C2200DBC3A3 /* LetrasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FB2D3E1AB70C2200DBC3A3 /* LetrasViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,18 +42,18 @@
 		27156F5618B76AF50053A99C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		27156F5818B76AF50053A99C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		27156F5A18B76AF50053A99C /* Navigation-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Navigation-Prefix.pch"; sourceTree = "<group>"; };
-		27156F5B18B76AF50053A99C /* MackenzieAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MackenzieAppDelegate.h; sourceTree = "<group>"; };
-		27156F5C18B76AF50053A99C /* MackenzieAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MackenzieAppDelegate.m; sourceTree = "<group>"; };
+		27156F5B18B76AF50053A99C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		27156F5C18B76AF50053A99C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		27156F5E18B76AF50053A99C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		27156F6418B76AF50053A99C /* NavigationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NavigationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27156F6518B76AF50053A99C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		27156F6D18B76AF50053A99C /* NavigationTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NavigationTests-Info.plist"; sourceTree = "<group>"; };
 		27156F6F18B76AF50053A99C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		27156F7118B76AF50053A99C /* NavigationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationTests.m; sourceTree = "<group>"; };
-		27156F7B18BA89430053A99C /* LetraAViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LetraAViewController.h; sourceTree = "<group>"; };
-		27156F7C18BA89430053A99C /* LetraAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LetraAViewController.m; sourceTree = "<group>"; };
 		27156F7E18BA8B210053A99C /* LetraBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LetraBViewController.h; sourceTree = "<group>"; };
 		27156F7F18BA8B210053A99C /* LetraBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LetraBViewController.m; sourceTree = "<group>"; };
+		D6FB2D3D1AB70C2200DBC3A3 /* LetrasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LetrasViewController.h; sourceTree = "<group>"; };
+		D6FB2D3E1AB70C2200DBC3A3 /* LetrasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LetrasViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,14 +113,14 @@
 		27156F5218B76AF50053A99C /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
-				27156F5B18B76AF50053A99C /* MackenzieAppDelegate.h */,
-				27156F5C18B76AF50053A99C /* MackenzieAppDelegate.m */,
 				27156F5E18B76AF50053A99C /* Images.xcassets */,
-				27156F5318B76AF50053A99C /* Supporting Files */,
-				27156F7B18BA89430053A99C /* LetraAViewController.h */,
-				27156F7C18BA89430053A99C /* LetraAViewController.m */,
+				D6FB2D3D1AB70C2200DBC3A3 /* LetrasViewController.h */,
+				D6FB2D3E1AB70C2200DBC3A3 /* LetrasViewController.m */,
+				27156F5B18B76AF50053A99C /* AppDelegate.h */,
+				27156F5C18B76AF50053A99C /* AppDelegate.m */,
 				27156F7E18BA8B210053A99C /* LetraBViewController.h */,
 				27156F7F18BA8B210053A99C /* LetraBViewController.m */,
+				27156F5318B76AF50053A99C /* Supporting Files */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -250,8 +250,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27156F5D18B76AF50053A99C /* MackenzieAppDelegate.m in Sources */,
-				27156F7D18BA89430053A99C /* LetraAViewController.m in Sources */,
+				27156F5D18B76AF50053A99C /* AppDelegate.m in Sources */,
+				D6FB2D3F1AB70C2200DBC3A3 /* LetrasViewController.m in Sources */,
 				27156F8018BA8B210053A99C /* LetraBViewController.m in Sources */,
 				27156F5918B76AF50053A99C /* main.m in Sources */,
 			);
@@ -454,6 +454,7 @@
 				27156F7718B76AF50053A99C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		27156F7818B76AF50053A99C /* Build configuration list for PBXNativeTarget "NavigationTests" */ = {
 			isa = XCConfigurationList;
@@ -462,6 +463,7 @@
 				27156F7A18B76AF50053A99C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

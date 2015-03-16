@@ -6,17 +6,16 @@
 //  Copyright (c) 2014 Vinicius Miana. All rights reserved.
 //
 
-#import "MackenzieAppDelegate.h"
-#import "LetraAViewController.h"
+#import "AppDelegate.h"
+#import "LetrasViewController.h"
 
-@implementation MackenzieAppDelegate
+@implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    LetraAViewController *viewController = [[LetraAViewController alloc]
+    LetrasViewController *viewController = [[LetrasViewController alloc]
                                            initWithNibName:nil
                                            bundle:nil];
-    
     
     self.navigationController = [[UINavigationController alloc]
                                  initWithRootViewController:viewController];
@@ -24,8 +23,6 @@
                    initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = self.navigationController;
 
-
-    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
