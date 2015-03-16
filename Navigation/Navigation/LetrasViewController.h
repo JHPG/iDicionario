@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LetraView.h"
 
-@interface LetrasViewController : UIViewController
+@interface LetrasViewController : UIViewController //<LetraViewDelegate>
+
+@property NSMutableArray *letras;
+@property int index;
+
+//+(instancetype)sharedInstance;
 
 @end
