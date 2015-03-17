@@ -11,4 +11,17 @@
 @implementation Letra
 
 
+-(instancetype)initWithLetra:(NSString*)letra andImagem:(UIImage*)imagem andPalavra:(NSString*)palavra {
+    self = [super init];
+    
+    if(self){
+        _letra = letra;
+        _imagem = imagem;
+        _palavra = palavra;
+        //Som
+    }
+    return self;
+}
+
+
 @end

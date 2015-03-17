@@ -7,7 +7,6 @@
 //
 
 #import "LetrasViewController.h"
-#import "LetraBViewController.h"
 #import "LetraView.h"
 
 @interface LetrasViewController ()

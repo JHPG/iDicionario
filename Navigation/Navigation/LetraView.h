@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "Letra.h"
 #import "LetrasViewController.h"
-#import "LetraBViewController.h"
 
 /*
 @protocol LetraViewDelegate <NSObject>

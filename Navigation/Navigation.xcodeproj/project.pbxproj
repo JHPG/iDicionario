@@ -19,7 +19,6 @@
 		27156F6818B76AF50053A99C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27156F5018B76AF50053A99C /* UIKit.framework */; };
 		27156F7018B76AF50053A99C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 27156F6E18B76AF50053A99C /* InfoPlist.strings */; };
 		27156F7218B76AF50053A99C /* NavigationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 27156F7118B76AF50053A99C /* NavigationTests.m */; };
-		27156F8018BA8B210053A99C /* LetraBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27156F7F18BA8B210053A99C /* LetraBViewController.m */; };
 		D6FB2D3F1AB70C2200DBC3A3 /* LetrasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FB2D3E1AB70C2200DBC3A3 /* LetrasViewController.m */; };
 		D6FB2D421AB70F9700DBC3A3 /* LetraView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FB2D411AB70F9700DBC3A3 /* LetraView.m */; };
 		D6FB2D461AB7121500DBC3A3 /* Letra.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FB2D451AB7121500DBC3A3 /* Letra.m */; };
@@ -52,8 +51,6 @@
 		27156F6D18B76AF50053A99C /* NavigationTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NavigationTests-Info.plist"; sourceTree = "<group>"; };
 		27156F6F18B76AF50053A99C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		27156F7118B76AF50053A99C /* NavigationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationTests.m; sourceTree = "<group>"; };
-		27156F7E18BA8B210053A99C /* LetraBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LetraBViewController.h; sourceTree = "<group>"; };
-		27156F7F18BA8B210053A99C /* LetraBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LetraBViewController.m; sourceTree = "<group>"; };
 		D6FB2D3D1AB70C2200DBC3A3 /* LetrasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LetrasViewController.h; sourceTree = "<group>"; };
 		D6FB2D3E1AB70C2200DBC3A3 /* LetrasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LetrasViewController.m; sourceTree = "<group>"; };
 		D6FB2D401AB70F9700DBC3A3 /* LetraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LetraView.h; sourceTree = "<group>"; };
@@ -125,8 +122,6 @@
 				27156F5E18B76AF50053A99C /* Images.xcassets */,
 				D6FB2D3D1AB70C2200DBC3A3 /* LetrasViewController.h */,
 				D6FB2D3E1AB70C2200DBC3A3 /* LetrasViewController.m */,
-				27156F7E18BA8B210053A99C /* LetraBViewController.h */,
-				27156F7F18BA8B210053A99C /* LetraBViewController.m */,
 				D6FB2D401AB70F9700DBC3A3 /* LetraView.h */,
 				D6FB2D411AB70F9700DBC3A3 /* LetraView.m */,
 				27156F5318B76AF50053A99C /* Supporting Files */,
@@ -271,7 +266,6 @@
 				D6FB2D461AB7121500DBC3A3 /* Letra.m in Sources */,
 				27156F5D18B76AF50053A99C /* AppDelegate.m in Sources */,
 				D6FB2D3F1AB70C2200DBC3A3 /* LetrasViewController.m in Sources */,
-				27156F8018BA8B210053A99C /* LetraBViewController.m in Sources */,
 				27156F5918B76AF50053A99C /* main.m in Sources */,
 				D6FB2D421AB70F9700DBC3A3 /* LetraView.m in Sources */,
 			);
