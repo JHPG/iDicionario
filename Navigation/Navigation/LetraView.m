@@ -41,9 +41,15 @@
 
 -(void) prencherLetras{
     
-    [_letras addObject: [[Letra alloc] initWithLetra:@"A" andImagem:nil andPalavra:@"Abelha"]];
-    [_letras addObject: [[Letra alloc] initWithLetra:@"B" andImagem:nil andPalavra:@"Bala"]];
-    [_letras addObject: [[Letra alloc] initWithLetra:@"C" andImagem:nil andPalavra:@"Cachorro"]];
+    //UIImage *s = [UIImage imageNamed:@"a"];
+    //UIImage *s = [UIImage imageWithContentsOfFile:@"images/a.png"];
+    
+    [_letras addObject: [[Letra alloc] initWithLetra:@"A"
+                                           andImagem:[UIImage imageNamed:@"a"] andPalavra:@"Abelha"]];
+    [_letras addObject: [[Letra alloc] initWithLetra:@"B"
+                                           andImagem:[UIImage imageNamed:@"b"] andPalavra:@"Bala"]];
+    [_letras addObject: [[Letra alloc] initWithLetra:@"C"
+                                           andImagem:[UIImage imageNamed:@"c"] andPalavra:@"Cachorro"]];
 //    [_letras addObject: [[Letra alloc] initWithLetra:@"D" andImagem:nil andPalavra:@"Dado"]];
 //    [_letras addObject: [[Letra alloc] initWithLetra:@"E" andImagem:nil andPalavra:@"Elefante"]];
 //    [_letras addObject: [[Letra alloc] initWithLetra:@"F" andImagem:nil andPalavra:@"Foca"]];
@@ -73,6 +79,9 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
+    LetraView *lv = [LetraView sharedInstance];
+    _letra = [lv.letras objectAtIndex: lv.index];
+    
     // NavBar
     UIBarButtonItem *next = [[UIBarButtonItem alloc]
                              initWithBarButtonSystemItem:UIBarButtonSystemItemFastForward
@@ -81,23 +90,28 @@
     
     // Label
     UILabel *labelPalavra = [[UILabel alloc]
-                       initWithFrame:CGRectMake(60, 200, 500, 100)];
+                       initWithFrame: CGRectMake(60, 100, 500, 100)];
     [labelPalavra setFont:[UIFont fontWithName: @"Trebuchet MS" size: 26.0f]];
     [self.view addSubview:labelPalavra];
     
+    //ImageView
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame: CGRectMake(100, 200, 200, 180)];
+    [self.view addSubview:imageView];
+    
     // Button
-    UIButton *botao = [UIButton buttonWithType:UIButtonTypeSystem];
+    /* UIButton *botao = [UIButton buttonWithType:UIButtonTypeSystem];
     [botao setTitle:@"palavra, figura e botao falante" forState:UIControlStateNormal];
     [botao sizeToFit];
     botao.center = self.view.center;
     [self.view addSubview:botao];
+    */
     
     ///////  Remover e fazer navigation na mao
     
     //Construir tela aqui  // Fazer td aqui
     self.title = _letra.letra;
     labelPalavra.text = _letra.palavra;
-    
+    imageView.image = _letra.imagem;
     
     /////////////////
 
@@ -113,27 +127,32 @@
     //passar parametros para o metodo [novo: obj]
     LetraView *lv = [LetraView sharedInstance];
     
-    if(lv.index < lv.letras.count){
-        
-        Letra *letra = [lv.letras objectAtIndex: lv.index];
+    if(lv.index+1 < lv.letras.count)
         lv.index++;
-        
-        [self.navigationController pushViewController: [self novo:letra] animated:YES];
-    }
+    else
+        lv.index = 0;
+    
+    Letra *letra = [lv.letras objectAtIndex: lv.index];
+    
+    [self.navigationController pushViewController: [self novo:letra] animated:YES];
+    
+    //[[self.navigationController.viewControllers objectAtIndex: lv.index-1] popNavigationItemAnimated:NO];
+    
 }
 
--(void)previous:(id)sender {    //retorna o anterior
+-(void)previous:(id)sender {    //retorna o anterior //Não está sendo chamado ainda
     
     //passar parametros para o metodo [novo: obj]
     LetraView *lv = [LetraView sharedInstance];
     
-    if(lv.index > 0){
-        
+    if(lv.index > 0)
         lv.index--;
-        Letra *letra = [lv.letras objectAtIndex: lv.index];
-        
-        [self.navigationController pushViewController: [self novo:letra] animated:YES];
-    }
+    else
+        lv.index = (int) lv.letras.count-1;
+
+    Letra *letra = [lv.letras objectAtIndex: lv.index];
+    
+    [self.navigationController pushViewController: [self novo:letra] animated:YES];
     
 }
 
@@ -145,6 +164,8 @@
     
     return novo;
 }
+
+
 
 
 @end
