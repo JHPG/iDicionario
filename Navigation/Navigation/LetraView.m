@@ -15,6 +15,8 @@
 
 @implementation LetraView
 
+@synthesize imageView, labelPalavra;
+
 -(instancetype)initWithLetra: (Letra*) l{
     self = [super init];
     
@@ -98,14 +100,15 @@
     [self.view addSubview: labelLetra];
     
     // LabelPalavra
-    UILabel *labelPalavra = [[UILabel alloc]
+    labelPalavra = [[UILabel alloc]
                        initWithFrame: CGRectMake(centerView-120, 150, 500, 100)];
     [labelPalavra setFont:[UIFont fontWithName: @"Trebuchet MS" size: 32.0f]];
     [self.view addSubview:labelPalavra];
     
     //ImageView
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame: CGRectMake(centerView-100, 220, 200, 180)];
+    imageView = [[UIImageView alloc] initWithFrame: CGRectMake(self.view.frame.size.width, 0, 200, 180)];
     [self.view addSubview:imageView];
+    
     
     // Button
     /* UIButton *botao = [UIButton buttonWithType:UIButtonTypeSystem];
@@ -125,6 +128,21 @@
     
     /////////////////
 
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    
+    //Centro da view
+    CGFloat centerView = self.view.center.x;
+    
+    [UIView animateWithDuration:1 delay:0.1 options: UIViewAnimationCurveEaseIn
+                     animations:^{
+                         
+                         imageView.frame = CGRectMake(centerView-100, 220, 200, 180);
+                         
+                     }
+                     completion:nil];
+    
 }
 
 -(void)viewWillUnload:(BOOL)animated{

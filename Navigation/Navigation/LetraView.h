@@ -25,6 +25,10 @@
 @property int index;
 @property NSMutableArray *letras;
 
+
+@property UILabel *labelPalavra;
+@property UIImageView *imageView;
+
 //@property (nonatomic, assign) id<LetraViewDelegate> delegate;
 
 -(instancetype)initWithLetra: (Letra*) l;
