@@ -82,20 +82,29 @@
     LetraView *lv = [LetraView sharedInstance];
     _letra = [lv.letras objectAtIndex: lv.index];
     
+    //Centro da view
+    CGFloat centerView = self.view.center.x;
+    
     // NavBar
     UIBarButtonItem *next = [[UIBarButtonItem alloc]
                              initWithBarButtonSystemItem:UIBarButtonSystemItemFastForward
                              target:self action:@selector(next:)];
     self.navigationItem.rightBarButtonItem=next;
     
-    // Label
+    // LabelLetra
+    UILabel *labelLetra = [[UILabel alloc]
+                             initWithFrame: CGRectMake(centerView-10, 50, 500, 100)];
+    [labelLetra setFont:[UIFont fontWithName: @"Trebuchet MS" size: 40.0f]];
+    [self.view addSubview: labelLetra];
+    
+    // LabelPalavra
     UILabel *labelPalavra = [[UILabel alloc]
-                       initWithFrame: CGRectMake(60, 100, 500, 100)];
-    [labelPalavra setFont:[UIFont fontWithName: @"Trebuchet MS" size: 26.0f]];
+                       initWithFrame: CGRectMake(centerView-120, 150, 500, 100)];
+    [labelPalavra setFont:[UIFont fontWithName: @"Trebuchet MS" size: 32.0f]];
     [self.view addSubview:labelPalavra];
     
     //ImageView
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame: CGRectMake(100, 200, 200, 180)];
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame: CGRectMake(centerView-100, 220, 200, 180)];
     [self.view addSubview:imageView];
     
     // Button
@@ -110,6 +119,7 @@
     
     //Construir tela aqui  // Fazer td aqui
     self.title = _letra.letra;
+    labelLetra.text = _letra.letra;
     labelPalavra.text = _letra.palavra;
     imageView.image = _letra.imagem;
     
