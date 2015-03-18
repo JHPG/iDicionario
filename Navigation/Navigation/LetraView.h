@@ -35,6 +35,7 @@
 
 -(void)previous:(id)sender;
 -(void)next:(id)sender;
+-(void)editar:(id)sender;
 
 -(instancetype) novo: (Letra*) obj;
 

@@ -91,12 +91,10 @@
     CGFloat posicaoY = self.view.bounds.size.height-92;
     CGFloat width = self.view.bounds.size.width;
     UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, posicaoY, width, 44)];
-    UIBarButtonItem *editar = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:
+    UIBarButtonItem *editarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:
                                UIBarButtonSystemItemEdit target:self action:@selector(editar:)];
-    #warning trocar action do editar
-    [toolbar setItems:@[editar]];
+    [toolbar setItems: @[editarButton]]; //Add na toolbar
     [self.view addSubview:toolbar];
-#warning terminar toolbar
     
     // NavBar button
     UIBarButtonItem *next = [[UIBarButtonItem alloc]
@@ -183,7 +181,7 @@
     
 }
 
--(void)previous:(id)sender {    //retorna o anterior //Não está sendo chamado ainda
+-(void)previous:(id)sender {    //retorna o anterior # Não está sendo chamado ainda
     
     //passar parametros para o metodo [novo: obj]
     LetraView *lv = [LetraView sharedInstance];
@@ -208,10 +206,9 @@
     return novo;
 }
 
--(void) editar{
+-(void) editar: (id)sender{
     
-    
-    
+    NSLog(@"Edit");
     
 }
 
