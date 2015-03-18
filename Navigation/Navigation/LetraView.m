@@ -49,7 +49,7 @@
     [_letras addObject: [[Letra alloc] initWithLetra:@"A"
                                            andImagem:[UIImage imageNamed:@"a"] andPalavra:@"Abelha"]];
     [_letras addObject: [[Letra alloc] initWithLetra:@"B"
-                                           andImagem:[UIImage imageNamed:@"b"] andPalavra:@"Bala"]];
+                                           andImagem:[UIImage imageNamed:@"b"] andPalavra:@"Bola"]];
     [_letras addObject: [[Letra alloc] initWithLetra:@"C"
                                            andImagem:[UIImage imageNamed:@"c"] andPalavra:@"Cachorro"]];
 //    [_letras addObject: [[Letra alloc] initWithLetra:@"D" andImagem:nil andPalavra:@"Dado"]];
@@ -87,7 +87,12 @@
     //Centro da view
     CGFloat centerView = self.view.center.x;
     
-    // NavBar
+    //ToolBar
+    UIToolbar *toolbar = [[UIToolbar alloc] init];
+    [self.view addSubview:toolbar];
+    #warning terminar toolbar
+    
+    // NavBar button
     UIBarButtonItem *next = [[UIBarButtonItem alloc]
                              initWithBarButtonSystemItem:UIBarButtonSystemItemFastForward
                              target:self action:@selector(next:)];
@@ -127,7 +132,6 @@
     imageView.image = _letra.imagem;
     
     /////////////////
-
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -135,14 +139,17 @@
     //Centro da view
     CGFloat centerView = self.view.center.x;
     
-    [UIView animateWithDuration:1 delay:0.1 options: UIViewAnimationCurveEaseIn
+    [self animateThis:imageView posicao: CGRectMake(centerView-100, 220, 200, 180)];
+    
+}
+
+-(void)animateThis:(UIView*)el posicao:(CGRect)pos{
+    [UIView animateWithDuration:1 delay:0.1 options: 0 //UIViewAnimationCurveEaseIn
                      animations:^{
-                         
-                         imageView.frame = CGRectMake(centerView-100, 220, 200, 180);
-                         
+                         el.frame = pos; //nova posição/tamanho
+                         //imageView.frame = CGRectMake(centerView-100, 220, 200, 180)
                      }
                      completion:nil];
-    
 }
 
 -(void)viewWillUnload:(BOOL)animated{
