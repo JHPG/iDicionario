@@ -25,15 +25,16 @@
                    initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = self.navigationController;
 
-    LetraView *view = [[LetraView alloc] init]; //tab1 já criada;
+    LetraView *letrasView = [[LetraView alloc] init]; //tab1 já criada;
     
     //TabBar
-    //self.tabBar = [[UITabBarController alloc] init];
-    //self.tabBar.viewControllers = [NSArray arrayWithObjects: viewController, view, nil];
-    //self.window.rootViewController = self.tabBar;
-    //UITabBarItem *item1 = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemFeatured tag:0];
+    self.tabBar = [[UITabBarController alloc] init];
+    self.tabBar.viewControllers = @[self.navigationController, letrasView];
+    self.window.rootViewController = self.tabBar;
+    _navigationController.title = @"Navegar";
+    letrasView.title = @"Lista";
     
-    [self.navigationController showViewController:view sender:nil];
+    //UITabBarItem *item1 = [[UITabBarItem alloc] initWithTabBar
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
