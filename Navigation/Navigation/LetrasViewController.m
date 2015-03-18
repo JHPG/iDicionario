@@ -33,8 +33,9 @@
     UINavigationItem *item = self.navigationController.navigationBar.topItem;
     [item setTitle:@"Inicio"];
     
-    LetraView *view = [[LetraView alloc] init];
-    [self showViewController:view sender:nil];
+    
+    
+    
 }
 
 @end

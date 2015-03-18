@@ -88,9 +88,15 @@
     CGFloat centerView = self.view.center.x;
     
     //ToolBar
-    UIToolbar *toolbar = [[UIToolbar alloc] init];
+    CGFloat posicaoY = self.view.bounds.size.height-92;
+    CGFloat width = self.view.bounds.size.width;
+    UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, posicaoY, width, 44)];
+    UIBarButtonItem *editar = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:
+                               UIBarButtonSystemItemEdit target:self action:@selector(editar:)];
+    #warning trocar action do editar
+    [toolbar setItems:@[editar]];
     [self.view addSubview:toolbar];
-    #warning terminar toolbar
+#warning terminar toolbar
     
     // NavBar button
     UIBarButtonItem *next = [[UIBarButtonItem alloc]
@@ -132,6 +138,8 @@
     imageView.image = _letra.imagem;
     
     /////////////////
+    
+    self.navigationController.title = @"Navegar";
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -200,7 +208,12 @@
     return novo;
 }
 
-
+-(void) editar{
+    
+    
+    
+    
+}
 
 
 @end

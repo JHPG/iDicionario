@@ -16,23 +16,24 @@
     LetrasViewController *viewController = [[LetrasViewController alloc]
                                            initWithNibName:nil
                                            bundle:nil];
+    LetraView *letrasView = [[LetraView alloc]
+                                           initWithNibName:nil
+                                           bundle:nil];
     
     //Navigation
     self.navigationController = [[UINavigationController alloc]
-                                 initWithRootViewController:viewController];
+                                 initWithRootViewController:letrasView];
     //
     self.window = [[UIWindow alloc]
                    initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = self.navigationController;
-
-    LetraView *letrasView = [[LetraView alloc] init]; //tab1 já criada;
     
     //TabBar
     self.tabBar = [[UITabBarController alloc] init];
-    self.tabBar.viewControllers = @[self.navigationController, letrasView];
+    self.tabBar.viewControllers = @[self.navigationController, viewController];
     self.window.rootViewController = self.tabBar;
     _navigationController.title = @"Navegar";
-    letrasView.title = @"Lista";
+    viewController.title = @"Lista";
     
     //UITabBarItem *item1 = [[UITabBarItem alloc] initWithTabBar
     
