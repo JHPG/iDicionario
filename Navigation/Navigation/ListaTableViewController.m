@@ -13,12 +13,15 @@
 @end
 
 @implementation ListaTableViewController
+//@synthesize labelPalavra;
+
 
 LetraView *letraView;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     letraView = [LetraView sharedInstance];
+//    UINib *nib = [UINib nibWithNibName:@"ListaTableViewCell bundle:@"ssfdsf"
     
     
     // Uncomment the following line to preserve selection between presentations.
@@ -35,6 +38,10 @@ LetraView *letraView;
 
 #pragma mark - Table view data source
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 50;
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
     return 1;
@@ -42,26 +49,29 @@ LetraView *letraView;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    //return letraView.letras.count;
-    return 1;
+    return letraView.letras.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"CelulaPalavra"];
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"CelulaPalavra"];
     
-    // LabelPalavra
-    UILabel *labelPalavra = [[UILabel alloc]
-                    initWithFrame: CGRectMake(10, 130, 500, 100)];
-    [labelPalavra setFont:[UIFont fontWithName: @"Trebuchet MS" size: 32.0f]];
+    //  LabelPalavra
+//    UILabel *labelPalavra = [[UILabel alloc] initWithFrame:CGRectMake(10, 15, 100, 20)];
+//    [labelPalavra setFont:[UIFont fontWithName: @"Trebuchet MS" size: 16.0f]];
+//    [labelPalavra setText: [[letraView.letras objectAtIndex:indexPath.row] palavra]];
+//    [cell addSubview:labelPalavra];
     
-    [cell addSubview:labelPalavra];
+    [cell.textLabel setText: [[letraView.letras objectAtIndex:indexPath.row] letra]];
+    [cell.detailTextLabel setText: [[letraView.letras objectAtIndex:indexPath.row] palavra]];
+    [cell.imageView setImage: [[letraView.letras objectAtIndex:indexPath.row] imagem]];
     
-    
-    
+    [cell autoresizesSubviews];
+
     return cell;
 }
+
 
 
 /*

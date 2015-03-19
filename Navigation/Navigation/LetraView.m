@@ -36,7 +36,6 @@
         [instance setIndex:0];
         instance.letras = [[NSMutableArray alloc] init];
         [instance prencherLetras];
-
     });
     return instance;
 }
@@ -44,7 +43,7 @@
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
     UITouch *touch = [touches anyObject];
     CGPoint location = [touch locationInView:touch.view];
-    
+    //Verificar se o touch está em cima da imagem antes
     [imageView setCenter:location];
 }
 

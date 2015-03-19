@@ -11,6 +11,6 @@
 
 @interface ListaTableViewController : UITableViewController
 
-
+//@property UILabel *labelPalavra;
 
 @end

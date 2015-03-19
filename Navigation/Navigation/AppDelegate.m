@@ -20,10 +20,11 @@
     LetraView *letrasView = [[LetraView alloc]
                                            initWithNibName:nil
                                            bundle:nil];
-    
     //Navigation
     self.navigationController = [[UINavigationController alloc]
                                  initWithRootViewController:letrasView];
+    self.navigationControllerLista = [[UINavigationController alloc]
+                                 initWithRootViewController:viewController];
     //
     self.window = [[UIWindow alloc]
                    initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -31,7 +32,7 @@
     
     //TabBar
     self.tabBar = [[UITabBarController alloc] init];
-    self.tabBar.viewControllers = @[self.navigationController, viewController];
+    self.tabBar.viewControllers = @[_navigationController, _navigationControllerLista];
     self.window.rootViewController = self.tabBar;
     _navigationController.title = @"Navegar";
     viewController.title = @"Lista";
