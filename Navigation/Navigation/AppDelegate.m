@@ -7,13 +7,14 @@
 //
 
 #import "AppDelegate.h"
-#import "LetrasViewController.h"
+#import "ListaTableViewController.h"
+#import "LetraView.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    LetrasViewController *viewController = [[LetrasViewController alloc]
+    ListaTableViewController *viewController = [[ListaTableViewController alloc]
                                            initWithNibName:nil
                                            bundle:nil];
     LetraView *letrasView = [[LetraView alloc]

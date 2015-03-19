@@ -3,11 +3,11 @@
 //  Navigation
 //
 //  Created by Jorge Henrique P. Garcia on 3/16/15.
-//  Copyright (c) 2015 Vinicius Miana. All rights reserved.
+//  Copyright (c) 2015 Jorge Henrique. All rights reserved.
 //
 
 #import "LetraView.h"
-#import "LetrasViewController.h"
+#import "ListaTableViewController.h"
 
 @interface LetraView ()
     
@@ -41,18 +41,21 @@
     return instance;
 }
 
+-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
+    UITouch *touch = [touches anyObject];
+    CGPoint location = [touch locationInView:touch.view];
+    
+    [imageView setCenter:location];
+}
+
 -(void) prencherLetras{
     
     //UIImage *s = [UIImage imageNamed:@"a"];
     //UIImage *s = [UIImage imageWithContentsOfFile:@"images/a.png"];
-    
-    [_letras addObject: [[Letra alloc] initWithLetra:@"A"
-                                           andImagem:[UIImage imageNamed:@"a"] andPalavra:@"Abelha"]];
-    [_letras addObject: [[Letra alloc] initWithLetra:@"B"
-                                           andImagem:[UIImage imageNamed:@"b"] andPalavra:@"Bola"]];
-    [_letras addObject: [[Letra alloc] initWithLetra:@"C"
-                                           andImagem:[UIImage imageNamed:@"c"] andPalavra:@"Cachorro"]];
-//    [_letras addObject: [[Letra alloc] initWithLetra:@"D" andImagem:nil andPalavra:@"Dado"]];
+    [_letras addObject:[[Letra alloc] initWithPalavra:@"Abelha" andImagem:[UIImage imageNamed:@"a"]]];
+    [_letras addObject:[[Letra alloc] initWithPalavra:@"Bola" andImagem:[UIImage imageNamed:@"b"]]];
+    [_letras addObject:[[Letra alloc] initWithPalavra:@"Cachorro" andImagem:[UIImage imageNamed:@"c"]]];
+    [_letras addObject:[[Letra alloc] initWithPalavra:@"Dado" andImagem:[UIImage imageNamed:@"d"]]];
 //    [_letras addObject: [[Letra alloc] initWithLetra:@"E" andImagem:nil andPalavra:@"Elefante"]];
 //    [_letras addObject: [[Letra alloc] initWithLetra:@"F" andImagem:nil andPalavra:@"Foca"]];
 //    [_letras addObject: [[Letra alloc] initWithLetra:@"G" andImagem:nil andPalavra:@"Gelo"]];
@@ -110,12 +113,13 @@
     
     // LabelPalavra
     labelPalavra = [[UILabel alloc]
-                       initWithFrame: CGRectMake(centerView-120, 150, 500, 100)];
+                       initWithFrame: CGRectMake(centerView-120, 130, 500, 100)];
     [labelPalavra setFont:[UIFont fontWithName: @"Trebuchet MS" size: 32.0f]];
     [self.view addSubview:labelPalavra];
     
     //ImageView
     imageView = [[UIImageView alloc] initWithFrame: CGRectMake(self.view.frame.size.width, 0, 200, 180)];
+#warning Trocar tamanho da imagem aqui também
     [self.view addSubview:imageView];
     
     
@@ -149,18 +153,22 @@
     
 }
 
+-(void)viewWillUnload:(BOOL)animated{
+    LetraView *lv = [LetraView sharedInstance];
+    lv.index--;
+}
+
+-(void)viewDidDisappear:(BOOL)animated{
+    imageView.frame = CGRectMake(self.view.frame.size.width, 0, 200, 180);  //Zera a posicao da imagem antes de voltar
+}
+
 -(void)animateThis:(UIView*)el posicao:(CGRect)pos{
-    [UIView animateWithDuration:1 delay:0.1 options: 0 //UIViewAnimationCurveEaseIn
+    [UIView animateWithDuration:0.8 delay:0.1 options: 0 //UIViewAnimationCurveEaseIn
                      animations:^{
                          el.frame = pos; //nova posição/tamanho
                          //imageView.frame = CGRectMake(centerView-100, 220, 200, 180)
                      }
                      completion:nil];
-}
-
--(void)viewWillUnload:(BOOL)animated{
-    LetraView *lv = [LetraView sharedInstance];
-    lv.index--;
 }
 
 -(void)next:(id)sender {    //retorna o próximo

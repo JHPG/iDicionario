@@ -19,7 +19,10 @@
 		27156F6818B76AF50053A99C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27156F5018B76AF50053A99C /* UIKit.framework */; };
 		27156F7018B76AF50053A99C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 27156F6E18B76AF50053A99C /* InfoPlist.strings */; };
 		27156F7218B76AF50053A99C /* NavigationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 27156F7118B76AF50053A99C /* NavigationTests.m */; };
-		D6FB2D3F1AB70C2200DBC3A3 /* LetrasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FB2D3E1AB70C2200DBC3A3 /* LetrasViewController.m */; };
+		D6D7AD661ABA00DB00E0056B /* EditarLetra.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D7AD651ABA00DB00E0056B /* EditarLetra.m */; };
+		D6D7AD691ABA010600E0056B /* ListaTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D7AD681ABA010600E0056B /* ListaTableViewController.m */; };
+		D6D7AD6B1ABA08D300E0056B /* d.png in Resources */ = {isa = PBXBuildFile; fileRef = D6D7AD6A1ABA08D300E0056B /* d.png */; };
+		D6D7AD711ABAE9B900E0056B /* CelulaPalavra.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D7AD701ABAE9B900E0056B /* CelulaPalavra.m */; };
 		D6FB2D421AB70F9700DBC3A3 /* LetraView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FB2D411AB70F9700DBC3A3 /* LetraView.m */; };
 		D6FB2D461AB7121500DBC3A3 /* Letra.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FB2D451AB7121500DBC3A3 /* Letra.m */; };
 		D6FB2D491AB8A1C100DBC3A3 /* a.png in Resources */ = {isa = PBXBuildFile; fileRef = D6FB2D481AB8A1C100DBC3A3 /* a.png */; };
@@ -54,8 +57,13 @@
 		27156F6D18B76AF50053A99C /* NavigationTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NavigationTests-Info.plist"; sourceTree = "<group>"; };
 		27156F6F18B76AF50053A99C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		27156F7118B76AF50053A99C /* NavigationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationTests.m; sourceTree = "<group>"; };
-		D6FB2D3D1AB70C2200DBC3A3 /* LetrasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LetrasViewController.h; sourceTree = "<group>"; };
-		D6FB2D3E1AB70C2200DBC3A3 /* LetrasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LetrasViewController.m; sourceTree = "<group>"; };
+		D6D7AD641ABA00DB00E0056B /* EditarLetra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditarLetra.h; sourceTree = "<group>"; };
+		D6D7AD651ABA00DB00E0056B /* EditarLetra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditarLetra.m; sourceTree = "<group>"; };
+		D6D7AD671ABA010600E0056B /* ListaTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListaTableViewController.h; sourceTree = "<group>"; };
+		D6D7AD681ABA010600E0056B /* ListaTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListaTableViewController.m; sourceTree = "<group>"; };
+		D6D7AD6A1ABA08D300E0056B /* d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = d.png; path = Navigation/images/d.png; sourceTree = "<group>"; };
+		D6D7AD6F1ABAE9B900E0056B /* CelulaPalavra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CelulaPalavra.h; sourceTree = "<group>"; };
+		D6D7AD701ABAE9B900E0056B /* CelulaPalavra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CelulaPalavra.m; sourceTree = "<group>"; };
 		D6FB2D401AB70F9700DBC3A3 /* LetraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LetraView.h; sourceTree = "<group>"; };
 		D6FB2D411AB70F9700DBC3A3 /* LetraView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LetraView.m; sourceTree = "<group>"; };
 		D6FB2D441AB7121500DBC3A3 /* Letra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Letra.h; path = Navigation/Letra.h; sourceTree = "<group>"; };
@@ -127,11 +135,15 @@
 			isa = PBXGroup;
 			children = (
 				27156F5E18B76AF50053A99C /* Images.xcassets */,
-				D6FB2D3D1AB70C2200DBC3A3 /* LetrasViewController.h */,
-				D6FB2D3E1AB70C2200DBC3A3 /* LetrasViewController.m */,
 				D6FB2D401AB70F9700DBC3A3 /* LetraView.h */,
 				D6FB2D411AB70F9700DBC3A3 /* LetraView.m */,
 				27156F5318B76AF50053A99C /* Supporting Files */,
+				D6D7AD641ABA00DB00E0056B /* EditarLetra.h */,
+				D6D7AD651ABA00DB00E0056B /* EditarLetra.m */,
+				D6D7AD671ABA010600E0056B /* ListaTableViewController.h */,
+				D6D7AD681ABA010600E0056B /* ListaTableViewController.m */,
+				D6D7AD6F1ABAE9B900E0056B /* CelulaPalavra.h */,
+				D6D7AD701ABAE9B900E0056B /* CelulaPalavra.m */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -177,6 +189,7 @@
 		D6FB2D471AB8A1A200DBC3A3 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				D6D7AD6A1ABA08D300E0056B /* d.png */,
 				D6FB2D4A1AB8AB6E00DBC3A3 /* b.png */,
 				D6FB2D4B1AB8AB6E00DBC3A3 /* c.png */,
 				D6FB2D481AB8A1C100DBC3A3 /* a.png */,
@@ -260,6 +273,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6D7AD6B1ABA08D300E0056B /* d.png in Resources */,
 				D6FB2D491AB8A1C100DBC3A3 /* a.png in Resources */,
 				27156F5718B76AF50053A99C /* InfoPlist.strings in Resources */,
 				D6FB2D4C1AB8AB6E00DBC3A3 /* b.png in Resources */,
@@ -285,7 +299,9 @@
 			files = (
 				D6FB2D461AB7121500DBC3A3 /* Letra.m in Sources */,
 				27156F5D18B76AF50053A99C /* AppDelegate.m in Sources */,
-				D6FB2D3F1AB70C2200DBC3A3 /* LetrasViewController.m in Sources */,
+				D6D7AD691ABA010600E0056B /* ListaTableViewController.m in Sources */,
+				D6D7AD711ABAE9B900E0056B /* CelulaPalavra.m in Sources */,
+				D6D7AD661ABA00DB00E0056B /* EditarLetra.m in Sources */,
 				27156F5918B76AF50053A99C /* main.m in Sources */,
 				D6FB2D421AB70F9700DBC3A3 /* LetraView.m in Sources */,
 			);

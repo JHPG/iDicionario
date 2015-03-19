@@ -15,6 +15,6 @@
 @property NSString *palavra;
 //Som
 
--(instancetype)initWithLetra:(NSString*)letra andImagem:(UIImage*)imagem andPalavra:(NSString*)palavra; 
+-(instancetype)initWithPalavra:(NSString*)palavra andImagem:(UIImage*)imagem;
 
 @end

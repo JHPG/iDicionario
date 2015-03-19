@@ -3,12 +3,12 @@
 //  Navigation
 //
 //  Created by Jorge Henrique P. Garcia on 3/16/15.
-//  Copyright (c) 2015 Vinicius Miana. All rights reserved.
+//  Copyright (c) 2015 Jorge Henrique. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "Letra.h"
-#import "LetrasViewController.h"
+#import "ListaTableViewController.h"
 
 /*
 @protocol LetraViewDelegate <NSObject>
@@ -20,6 +20,7 @@
  
 @interface LetraView : UIViewController
 
++ (instancetype)sharedInstance;
 
 @property Letra *letra;
 @property int index;

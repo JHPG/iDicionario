@@ -11,11 +11,11 @@
 @implementation Letra
 
 
--(instancetype)initWithLetra:(NSString*)letra andImagem:(UIImage*)imagem andPalavra:(NSString*)palavra {
+-(instancetype)initWithPalavra:(NSString*)palavra andImagem:(UIImage*)imagem {
     self = [super init];
     
     if(self){
-        _letra = letra;
+        _letra = [palavra substringToIndex:1];
         _imagem = imagem;
         _palavra = palavra;
         //Som
