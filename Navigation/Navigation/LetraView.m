@@ -99,20 +99,17 @@
     [self.view addSubview:toolbar];
     
     // NavBar button
-    UIBarButtonItem *next = [[UIBarButtonItem alloc]
-                             initWithBarButtonSystemItem:UIBarButtonSystemItemFastForward
+    UIBarButtonItem *next = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFastForward
                              target:self action:@selector(next:)];
     self.navigationItem.rightBarButtonItem=next;
     
     // LabelLetra
-    UILabel *labelLetra = [[UILabel alloc]
-                             initWithFrame: CGRectMake(centerView-10, 50, 500, 100)];
+    UILabel *labelLetra = [[UILabel alloc] initWithFrame: CGRectMake(centerView-10, 50, 500, 100)];
     [labelLetra setFont:[UIFont fontWithName: @"Trebuchet MS" size: 40.0f]];
     [self.view addSubview: labelLetra];
     
     // LabelPalavra
-    labelPalavra = [[UILabel alloc]
-                       initWithFrame: CGRectMake(centerView-120, 130, 500, 100)];
+    labelPalavra = [[UILabel alloc] initWithFrame: CGRectMake(centerView-120, 130, 500, 100)];
     [labelPalavra setFont:[UIFont fontWithName: @"Trebuchet MS" size: 32.0f]];
     [self.view addSubview:labelPalavra];
     
@@ -120,7 +117,6 @@
     imageView = [[UIImageView alloc] initWithFrame: CGRectMake(self.view.frame.size.width, 0, 200, 180)];
 #warning Trocar tamanho da imagem aqui também
     [self.view addSubview:imageView];
-    
     
     // Button
     /* UIButton *botao = [UIButton buttonWithType:UIButtonTypeSystem];
@@ -148,7 +144,7 @@
     //Centro da view
     CGFloat centerView = self.view.center.x;
     
-    [self animateThis:imageView posicao: CGRectMake(centerView-100, 220, 200, 180)];
+    [self animateThis1:imageView posicao: CGRectMake(centerView-100, 220, 200, 180)];
     
 }
 
@@ -161,7 +157,7 @@
     imageView.frame = CGRectMake(self.view.frame.size.width, 0, 200, 180);  //Zera a posicao da imagem antes de voltar
 }
 
--(void)animateThis:(UIView*)el posicao:(CGRect)pos{
+-(void)animateThis1:(UIView*)el posicao:(CGRect)pos{
     [UIView animateWithDuration:0.8 delay:0.1 options: 0 //UIViewAnimationCurveEaseIn
                      animations:^{
                          el.frame = pos; //nova posição/tamanho

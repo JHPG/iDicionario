@@ -14,7 +14,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    ListaTableViewController *viewController = [[ListaTableViewController alloc]
+    ListaTableViewController *listaView = [[ListaTableViewController alloc]
                                            initWithNibName:nil
                                            bundle:nil];
     LetraView *letrasView = [[LetraView alloc]
@@ -24,7 +24,7 @@
     self.navigationController = [[UINavigationController alloc]
                                  initWithRootViewController:letrasView];
     self.navigationControllerLista = [[UINavigationController alloc]
-                                 initWithRootViewController:viewController];
+                                 initWithRootViewController:listaView];
     //
     self.window = [[UIWindow alloc]
                    initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -34,10 +34,12 @@
     self.tabBar = [[UITabBarController alloc] init];
     self.tabBar.viewControllers = @[_navigationController, _navigationControllerLista];
     self.window.rootViewController = self.tabBar;
-    _navigationController.title = @"Navegar";
-    viewController.title = @"Lista";
     
-    //UITabBarItem *item1 = [[UITabBarItem alloc] initWithTabBar
+    [_navigationController.tabBarItem setImage:[UIImage imageNamed:@"fish"]];
+    [_navigationControllerLista.tabBarItem setImage:[UIImage imageNamed:@"book"]];
+    
+    _navigationController.title = @"Navegar";
+    _navigationControllerLista.title = @"Lista";
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
