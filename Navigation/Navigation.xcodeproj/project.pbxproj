@@ -22,7 +22,6 @@
 		D6D7AD661ABA00DB00E0056B /* EditarLetra.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D7AD651ABA00DB00E0056B /* EditarLetra.m */; };
 		D6D7AD691ABA010600E0056B /* ListaTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D7AD681ABA010600E0056B /* ListaTableViewController.m */; };
 		D6D7AD6B1ABA08D300E0056B /* d.png in Resources */ = {isa = PBXBuildFile; fileRef = D6D7AD6A1ABA08D300E0056B /* d.png */; };
-		D6D7AD711ABAE9B900E0056B /* CelulaPalavra.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D7AD701ABAE9B900E0056B /* CelulaPalavra.m */; };
 		D6FB2D421AB70F9700DBC3A3 /* LetraView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FB2D411AB70F9700DBC3A3 /* LetraView.m */; };
 		D6FB2D461AB7121500DBC3A3 /* Letra.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FB2D451AB7121500DBC3A3 /* Letra.m */; };
 		D6FB2D491AB8A1C100DBC3A3 /* a.png in Resources */ = {isa = PBXBuildFile; fileRef = D6FB2D481AB8A1C100DBC3A3 /* a.png */; };
@@ -62,8 +61,6 @@
 		D6D7AD671ABA010600E0056B /* ListaTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListaTableViewController.h; sourceTree = "<group>"; };
 		D6D7AD681ABA010600E0056B /* ListaTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListaTableViewController.m; sourceTree = "<group>"; };
 		D6D7AD6A1ABA08D300E0056B /* d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = d.png; path = Navigation/images/d.png; sourceTree = "<group>"; };
-		D6D7AD6F1ABAE9B900E0056B /* CelulaPalavra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CelulaPalavra.h; sourceTree = "<group>"; };
-		D6D7AD701ABAE9B900E0056B /* CelulaPalavra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CelulaPalavra.m; sourceTree = "<group>"; };
 		D6FB2D401AB70F9700DBC3A3 /* LetraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LetraView.h; sourceTree = "<group>"; };
 		D6FB2D411AB70F9700DBC3A3 /* LetraView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LetraView.m; sourceTree = "<group>"; };
 		D6FB2D441AB7121500DBC3A3 /* Letra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Letra.h; path = Navigation/Letra.h; sourceTree = "<group>"; };
@@ -142,8 +139,6 @@
 				D6D7AD651ABA00DB00E0056B /* EditarLetra.m */,
 				D6D7AD671ABA010600E0056B /* ListaTableViewController.h */,
 				D6D7AD681ABA010600E0056B /* ListaTableViewController.m */,
-				D6D7AD6F1ABAE9B900E0056B /* CelulaPalavra.h */,
-				D6D7AD701ABAE9B900E0056B /* CelulaPalavra.m */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -300,7 +295,6 @@
 				D6FB2D461AB7121500DBC3A3 /* Letra.m in Sources */,
 				27156F5D18B76AF50053A99C /* AppDelegate.m in Sources */,
 				D6D7AD691ABA010600E0056B /* ListaTableViewController.m in Sources */,
-				D6D7AD711ABAE9B900E0056B /* CelulaPalavra.m in Sources */,
 				D6D7AD661ABA00DB00E0056B /* EditarLetra.m in Sources */,
 				27156F5918B76AF50053A99C /* main.m in Sources */,
 				D6FB2D421AB70F9700DBC3A3 /* LetraView.m in Sources */,

@@ -7,7 +7,6 @@
 //
 
 #import "ListaTableViewController.h"
-#import "CelulaPalavra.h"
 
 @interface ListaTableViewController ()
 
@@ -50,9 +49,7 @@ LetraView *letraView;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CelulaPalavra" forIndexPath:indexPath];
-    
-    
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"CelulaPalavra"];
     
     // LabelPalavra
     UILabel *labelPalavra = [[UILabel alloc]
