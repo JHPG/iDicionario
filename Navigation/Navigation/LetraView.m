@@ -40,43 +40,6 @@
     return instance;
 }
 
--(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
-    UITouch *touch = [touches anyObject];
-    CGPoint location = [touch locationInView:touch.view];
-    //Verificar se o touch está em cima da imagem antes
-    [imageView setCenter:location];
-}
-
--(void) prencherLetras{
-    
-    //UIImage *s = [UIImage imageNamed:@"a"];
-    //UIImage *s = [UIImage imageWithContentsOfFile:@"images/a.png"];
-    [_letras addObject:[[Letra alloc] initWithPalavra:@"Abelha" andImagem:[UIImage imageNamed:@"a"]]];
-    [_letras addObject:[[Letra alloc] initWithPalavra:@"Bola" andImagem:[UIImage imageNamed:@"b"]]];
-    [_letras addObject:[[Letra alloc] initWithPalavra:@"Cachorro" andImagem:[UIImage imageNamed:@"c"]]];
-    [_letras addObject:[[Letra alloc] initWithPalavra:@"Dado" andImagem:[UIImage imageNamed:@"d"]]];
-//    [_letras addObject: [[Letra alloc] initWithLetra:@"E" andImagem:nil andPalavra:@"Elefante"]];
-//    [_letras addObject: [[Letra alloc] initWithLetra:@"F" andImagem:nil andPalavra:@"Foca"]];
-//    [_letras addObject: [[Letra alloc] initWithLetra:@"G" andImagem:nil andPalavra:@"Gelo"]];
-//    [_letras addObject: [[Letra alloc] initWithLetra:@"H" andImagem:nil andPalavra:@"Helicóptero"]];
-//    [_letras addObject: [[Letra alloc] initWithLetra:@"I" andImagem:nil andPalavra:@"Ilha"]];
-//    [_letras addObject: [[Letra alloc] initWithLetra:@"J" andImagem:nil andPalavra:@"Jabuti"]];
-//    [_letras addObject: [[Letra alloc] initWithLetra:@"L" andImagem:nil andPalavra:@"Lhama"]];
-//    [_letras addObject: [[Letra alloc] initWithLetra:@"M" andImagem:nil andPalavra:@"Macaco"]];
-//    [_letras addObject: [[Letra alloc] initWithLetra:@"N" andImagem:nil andPalavra:@"Navio"]];
-//    [_letras addObject: [[Letra alloc] initWithLetra:@"O" andImagem:nil andPalavra:@"Olho"]];
-//    [_letras addObject: [[Letra alloc] initWithLetra:@"P" andImagem:nil andPalavra:@"Pato"]];
-//    [_letras addObject: [[Letra alloc] initWithLetra:@"Q" andImagem:nil andPalavra:@"Queijo"]];
-//    [_letras addObject: [[Letra alloc] initWithLetra:@"R" andImagem:nil andPalavra:@"Rato"]];
-//    [_letras addObject: [[Letra alloc] initWithLetra:@"S" andImagem:nil andPalavra:@"Sapo"]];
-//    [_letras addObject: [[Letra alloc] initWithLetra:@"T" andImagem:nil andPalavra:@"Tatu"]];
-//    [_letras addObject: [[Letra alloc] initWithLetra:@"U" andImagem:nil andPalavra:@"Unicórnio"]];
-//    [_letras addObject: [[Letra alloc] initWithLetra:@"V" andImagem:nil andPalavra:@"Vaca"]];
-//    [_letras addObject: [[Letra alloc] initWithLetra:@"X" andImagem:nil andPalavra:@"Xampu"]];
-//    [_letras addObject: [[Letra alloc] initWithLetra:@"Z" andImagem:nil andPalavra:@"Zoo"]];
-    
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -94,13 +57,13 @@
     CGFloat width = self.view.bounds.size.width;
     UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, posicaoY, width, 44)];
     UIBarButtonItem *editarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:
-                               UIBarButtonSystemItemEdit target:self action:@selector(editar:)];
+                                     UIBarButtonSystemItemEdit target:self action:@selector(editar:)];
     [toolbar setItems: @[editarButton]]; //Add na toolbar
-    [self.view addSubview:toolbar];
+    [self.view addSubview: toolbar];
     
     // NavBar button
     UIBarButtonItem *next = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFastForward
-                             target:self action:@selector(next:)];
+                                                                          target:self action:@selector(next:)];
     self.navigationItem.rightBarButtonItem=next;
     
     // LabelLetra
@@ -116,15 +79,16 @@
     //ImageView
     imageView = [[UIImageView alloc] initWithFrame: CGRectMake(self.view.frame.size.width, 0, 200, 180)];
 #warning Trocar tamanho da imagem aqui também
+    [imageView setUserInteractionEnabled:YES];
     [self.view addSubview:imageView];
     
     // Button
     /* UIButton *botao = [UIButton buttonWithType:UIButtonTypeSystem];
-    [botao setTitle:@"palavra, figura e botao falante" forState:UIControlStateNormal];
-    [botao sizeToFit];
-    botao.center = self.view.center;
-    [self.view addSubview:botao];
-    */
+     [botao setTitle:@"palavra, figura e botao falante" forState:UIControlStateNormal];
+     [botao sizeToFit];
+     botao.center = self.view.center;
+     [self.view addSubview:botao];
+     */
     
     ///////  Remover e fazer navigation na mao
     
@@ -135,9 +99,46 @@
     imageView.image = _letra.imagem;
     
     /////////////////
-    
     self.navigationController.title = @"Navegar";
 }
+
+-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
+    UITouch *touch = [touches anyObject];
+    
+    if (touch.view == imageView){
+        CGPoint location = [touch locationInView:self.view];
+        //Verificar se o touch está em cima da imagem antes
+        [imageView setCenter:location];
+    }
+}
+
+-(void) prencherLetras{
+    
+    //UIImage *s = [UIImage imageNamed:@"a"];
+    //UIImage *s = [UIImage imageWithContentsOfFile:@"images/a.png"]; //n funciona
+    [_letras addObject: [[Letra alloc] initWithPalavra:@"Abelha" andImagem:[UIImage imageNamed:@"a"]]];
+    [_letras addObject: [[Letra alloc] initWithPalavra:@"Bola" andImagem:[UIImage imageNamed:@"b"]]];
+    [_letras addObject: [[Letra alloc] initWithPalavra:@"Cachorro" andImagem:[UIImage imageNamed:@"c"]]];
+    [_letras addObject: [[Letra alloc] initWithPalavra:@"Dado" andImagem:[UIImage imageNamed:@"d"]]];
+    [_letras addObject: [[Letra alloc] initWithPalavra:@"Elefante" andImagem:nil]];
+    [_letras addObject: [[Letra alloc] initWithPalavra:@"Foca" andImagem:nil]];
+    [_letras addObject: [[Letra alloc] initWithPalavra:@"Gelo" andImagem:nil]];
+    [_letras addObject: [[Letra alloc] initWithPalavra:@"Helicóptero" andImagem:nil]];
+    [_letras addObject: [[Letra alloc] initWithPalavra:@"Ilha" andImagem:nil]];
+    [_letras addObject: [[Letra alloc] initWithPalavra:@"Jabuti" andImagem:nil]];
+    [_letras addObject: [[Letra alloc] initWithPalavra:@"Lhama" andImagem:nil]];
+    [_letras addObject: [[Letra alloc] initWithPalavra:@"Macaco" andImagem:nil]];
+    [_letras addObject: [[Letra alloc] initWithPalavra:@"Navio" andImagem:nil]];
+    [_letras addObject: [[Letra alloc] initWithPalavra:@"Olho" andImagem:nil]];
+    [_letras addObject: [[Letra alloc] initWithPalavra:@"Pato" andImagem:nil]];
+    [_letras addObject: [[Letra alloc] initWithPalavra:@"Queijo" andImagem:nil]];
+    [_letras addObject: [[Letra alloc] initWithPalavra:@"Rato" andImagem:nil]];
+    [_letras addObject: [[Letra alloc] initWithPalavra:@"Sapo" andImagem:nil]];
+    [_letras addObject: [[Letra alloc] initWithPalavra:@"Tatu" andImagem:nil]];
+    [_letras addObject: [[Letra alloc] initWithPalavra:@"Unicórnio" andImagem:nil]];
+    [_letras addObject: [[Letra alloc] initWithPalavra:@"Vaca" andImagem:nil]];
+    [_letras addObject: [[Letra alloc] initWithPalavra:@"Xampu" andImagem:nil]];
+    [_letras addObject: [[Letra alloc] initWithPalavra:@"Zoo" andImagem:nil]];}
 
 -(void)viewWillAppear:(BOOL)animated{
     
