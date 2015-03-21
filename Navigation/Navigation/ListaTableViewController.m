@@ -72,7 +72,20 @@ LetraView *letraView;
     return cell;
 }
 
-
+-(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    //passar parametros para o metodo [novo: obj]
+    LetraView *lv = [LetraView sharedInstance];
+    
+    //Recebe parametros e cria view personalizada
+    LetraView *novo = [[LetraView alloc] initWithNibName:nil bundle:NULL];
+    
+    Letra *letra = [lv.letras objectAtIndex: indexPath.row];
+    [novo setLetra:letra];
+    
+    [self.navigationController pushViewController: novo animated:YES];
+    
+}
 
 /*
 // Override to support conditional editing of the table view.

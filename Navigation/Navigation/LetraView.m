@@ -16,6 +16,8 @@
 @implementation LetraView
 
 @synthesize imageView, labelPalavra;
+//Centro da view
+CGFloat centerView;
 
 -(instancetype)initWithLetra: (Letra*) l{
     self = [super init];
@@ -50,7 +52,8 @@
     _letra = [lv.letras objectAtIndex: lv.index];
     
     //Centro da view
-    CGFloat centerView = self.view.center.x;
+    centerView = self.view.center.x;
+
     
     //ToolBar
     CGFloat posicaoY = self.view.bounds.size.height-92;
@@ -112,6 +115,19 @@
     }
 }
 
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    CGFloat width = imageView.bounds.size.width;
+    CGFloat height = imageView.bounds.size.height;
+    [self animateThis1:imageView posicao:CGRectMake(centerView-100, 220, width+100, height+100) duration:0.2];
+}
+
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+    
+    CGFloat width = imageView.bounds.size.width;
+    CGFloat height = imageView.bounds.size.height;
+    [self animateThis1:imageView posicao:CGRectMake(centerView-100, 220, width-100, height-100) duration:0.2];
+}
+
 -(void) prencherLetras{
     
     //UIImage *s = [UIImage imageNamed:@"a"];
@@ -138,15 +154,12 @@
     [_letras addObject: [[Letra alloc] initWithPalavra:@"Unicórnio" andImagem:nil]];
     [_letras addObject: [[Letra alloc] initWithPalavra:@"Vaca" andImagem:nil]];
     [_letras addObject: [[Letra alloc] initWithPalavra:@"Xampu" andImagem:nil]];
-    [_letras addObject: [[Letra alloc] initWithPalavra:@"Zoo" andImagem:nil]];}
+    [_letras addObject: [[Letra alloc] initWithPalavra:@"Zoo" andImagem:nil]];
+}
 
 -(void)viewWillAppear:(BOOL)animated{
     
-    //Centro da view
-    CGFloat centerView = self.view.center.x;
-    
-    [self animateThis1:imageView posicao: CGRectMake(centerView-100, 220, 200, 180)];
-    
+    [self animateThis1:imageView posicao:CGRectMake(centerView-100, 220, 200, 180) duration:0.8];
 }
 
 -(void)viewWillUnload:(BOOL)animated{
@@ -158,8 +171,8 @@
     imageView.frame = CGRectMake(self.view.frame.size.width, 0, 200, 180);  //Zera a posicao da imagem antes de voltar
 }
 
--(void)animateThis1:(UIView*)el posicao:(CGRect)pos{
-    [UIView animateWithDuration:0.8 delay:0.1 options: 0 //UIViewAnimationCurveEaseIn
+-(void)animateThis1:(UIView*)el posicao:(CGRect)pos duration:(float)duration{
+    [UIView animateWithDuration:duration delay:0.1 options: 0 //UIViewAnimationCurveEaseIn
                      animations:^{
                          el.frame = pos; //nova posição/tamanho
                          //imageView.frame = CGRectMake(centerView-100, 220, 200, 180)
@@ -171,11 +184,6 @@
     
     //passar parametros para o metodo [novo: obj]
     LetraView *lv = [LetraView sharedInstance];
-    
-    if(lv.index+1 < lv.letras.count)
-        lv.index++;
-    else
-        lv.index = 0;
     
     Letra *letra = [lv.letras objectAtIndex: lv.index];
     
