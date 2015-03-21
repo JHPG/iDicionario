@@ -111,21 +111,34 @@ CGFloat centerView;
     if (touch.view == imageView){
         CGPoint location = [touch locationInView:self.view];
         //Verificar se o touch está em cima da imagem antes
-        [imageView setCenter:location];
+        [imageView setCenter:location]; //Movimenta pela tela
     }
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     CGFloat width = imageView.bounds.size.width;
     CGFloat height = imageView.bounds.size.height;
-    [self animateThis1:imageView posicao:CGRectMake(centerView-100, 220, width+100, height+100) duration:0.2];
+    //[self animateThis1:imageView posicao:CGRectMake(centerView-100, 220, width+100, height+100) duration:0.2];
+    
+    CGPoint center = imageView.center;
+    UITouch *touch = [touches anyObject];
+    if (touch.view == imageView){
+        [UIView animateWithDuration:0.3 delay:0 options: 0 //UIViewAnimationCurveEaseIn
+                     animations:^{
+                         imageView.frame = CGRectMake(centerView-100, 220, width+100, height+100);
+                         [imageView setCenter:center];
+                     }
+                     completion:nil];
+    }
 }
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
-    
-    CGFloat width = imageView.bounds.size.width;
-    CGFloat height = imageView.bounds.size.height;
-    [self animateThis1:imageView posicao:CGRectMake(centerView-100, 220, width-100, height-100) duration:0.2];
+    UITouch *touch = [touches anyObject];
+    if (touch.view == imageView){
+        CGFloat width = imageView.bounds.size.width;
+        CGFloat height = imageView.bounds.size.height;
+        [self animateThis1:imageView posicao:CGRectMake(centerView-100, 220, width-100, height-100) duration:0.2];
+    }
 }
 
 -(void) prencherLetras{
@@ -172,10 +185,14 @@ CGFloat centerView;
 }
 
 -(void)animateThis1:(UIView*)el posicao:(CGRect)pos duration:(float)duration{
+    CGPoint center = el.center;
+    
     [UIView animateWithDuration:duration delay:0.1 options: 0 //UIViewAnimationCurveEaseIn
                      animations:^{
                          el.frame = pos; //nova posição/tamanho
-                         //imageView.frame = CGRectMake(centerView-100, 220, 200, 180)
+//                         imageView.frame = CGRectMake(centerView-100, 220, 200, 180)
+//                         CGFloat x = el.
+//                         CGPoint center = [CGPointMake(x, y)]
                      }
                      completion:nil];
 }
