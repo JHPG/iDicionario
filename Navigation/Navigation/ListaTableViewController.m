@@ -31,11 +31,6 @@ LetraView *letraView;
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 #pragma mark - Table view data source
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -51,7 +46,6 @@ LetraView *letraView;
     // Return the number of rows in the section.
     return letraView.letras.count;
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -75,16 +69,16 @@ LetraView *letraView;
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     //passar parametros para o metodo [novo: obj]
-    LetraView *lv = [LetraView sharedInstance];
     
     //Recebe parametros e cria view personalizada
     LetraView *novo = [[LetraView alloc] initWithNibName:nil bundle:NULL];
     
-    Letra *letra = [lv.letras objectAtIndex: indexPath.row];
+    Letra *letra = [letraView.letras objectAtIndex: indexPath.row];
     [novo setLetra:letra];
+    //[novo setIndex: (int)indexPath.row];
+    letraView.index = (int)indexPath.row;
     
     [self.navigationController pushViewController: novo animated:YES];
-    
 }
 
 /*

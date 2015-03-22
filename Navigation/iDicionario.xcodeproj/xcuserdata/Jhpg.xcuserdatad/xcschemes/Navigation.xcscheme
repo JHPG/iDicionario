@@ -17,7 +17,7 @@
                BlueprintIdentifier = "27156F4818B76AF50053A99C"
                BuildableName = "Navigation.app"
                BlueprintName = "Navigation"
-               ReferencedContainer = "container:Navigation.xcodeproj">
+               ReferencedContainer = "container:iDicionario.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -31,7 +31,7 @@
                BlueprintIdentifier = "27156F6318B76AF50053A99C"
                BuildableName = "NavigationTests.xctest"
                BlueprintName = "NavigationTests"
-               ReferencedContainer = "container:Navigation.xcodeproj">
+               ReferencedContainer = "container:iDicionario.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -49,7 +49,7 @@
                BlueprintIdentifier = "27156F6318B76AF50053A99C"
                BuildableName = "NavigationTests.xctest"
                BlueprintName = "NavigationTests"
-               ReferencedContainer = "container:Navigation.xcodeproj">
+               ReferencedContainer = "container:iDicionario.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -59,7 +59,7 @@
             BlueprintIdentifier = "27156F4818B76AF50053A99C"
             BuildableName = "Navigation.app"
             BlueprintName = "Navigation"
-            ReferencedContainer = "container:Navigation.xcodeproj">
+            ReferencedContainer = "container:iDicionario.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -79,7 +79,7 @@
             BlueprintIdentifier = "27156F4818B76AF50053A99C"
             BuildableName = "Navigation.app"
             BlueprintName = "Navigation"
-            ReferencedContainer = "container:Navigation.xcodeproj">
+            ReferencedContainer = "container:iDicionario.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -98,7 +98,7 @@
             BlueprintIdentifier = "27156F4818B76AF50053A99C"
             BuildableName = "Navigation.app"
             BlueprintName = "Navigation"
-            ReferencedContainer = "container:Navigation.xcodeproj">
+            ReferencedContainer = "container:iDicionario.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -18,7 +18,7 @@
 @end
 */
  
-@interface LetraView : UIViewController
+@interface LetraView : UIViewController <UINavigationBarDelegate>
 
 + (instancetype)sharedInstance;
 

@@ -19,6 +19,8 @@
 //Centro da view
 CGFloat centerView;
 
+LetraView *lv;
+
 -(instancetype)initWithLetra: (Letra*) l{
     self = [super init];
     
@@ -48,7 +50,7 @@ CGFloat centerView;
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    LetraView *lv = [LetraView sharedInstance];
+    lv = [LetraView sharedInstance];
     _letra = [lv.letras objectAtIndex: lv.index];
     
     //Centro da view
@@ -81,7 +83,6 @@ CGFloat centerView;
     
     //ImageView
     imageView = [[UIImageView alloc] initWithFrame: CGRectMake(self.view.frame.size.width, 0, 200, 180)];
-#warning Trocar tamanho da imagem aqui também
     [imageView setUserInteractionEnabled:YES];
     [self.view addSubview:imageView];
     
@@ -149,25 +150,25 @@ CGFloat centerView;
     [_letras addObject: [[Letra alloc] initWithPalavra:@"Bola" andImagem:[UIImage imageNamed:@"b"]]];
     [_letras addObject: [[Letra alloc] initWithPalavra:@"Cachorro" andImagem:[UIImage imageNamed:@"c"]]];
     [_letras addObject: [[Letra alloc] initWithPalavra:@"Dado" andImagem:[UIImage imageNamed:@"d"]]];
-    [_letras addObject: [[Letra alloc] initWithPalavra:@"Elefante" andImagem:nil]];
-    [_letras addObject: [[Letra alloc] initWithPalavra:@"Foca" andImagem:nil]];
-    [_letras addObject: [[Letra alloc] initWithPalavra:@"Gelo" andImagem:nil]];
-    [_letras addObject: [[Letra alloc] initWithPalavra:@"Helicóptero" andImagem:nil]];
-    [_letras addObject: [[Letra alloc] initWithPalavra:@"Ilha" andImagem:nil]];
-    [_letras addObject: [[Letra alloc] initWithPalavra:@"Jabuti" andImagem:nil]];
-    [_letras addObject: [[Letra alloc] initWithPalavra:@"Lhama" andImagem:nil]];
-    [_letras addObject: [[Letra alloc] initWithPalavra:@"Macaco" andImagem:nil]];
-    [_letras addObject: [[Letra alloc] initWithPalavra:@"Navio" andImagem:nil]];
-    [_letras addObject: [[Letra alloc] initWithPalavra:@"Olho" andImagem:nil]];
-    [_letras addObject: [[Letra alloc] initWithPalavra:@"Pato" andImagem:nil]];
-    [_letras addObject: [[Letra alloc] initWithPalavra:@"Queijo" andImagem:nil]];
-    [_letras addObject: [[Letra alloc] initWithPalavra:@"Rato" andImagem:nil]];
-    [_letras addObject: [[Letra alloc] initWithPalavra:@"Sapo" andImagem:nil]];
-    [_letras addObject: [[Letra alloc] initWithPalavra:@"Tatu" andImagem:nil]];
-    [_letras addObject: [[Letra alloc] initWithPalavra:@"Unicórnio" andImagem:nil]];
-    [_letras addObject: [[Letra alloc] initWithPalavra:@"Vaca" andImagem:nil]];
-    [_letras addObject: [[Letra alloc] initWithPalavra:@"Xampu" andImagem:nil]];
-    [_letras addObject: [[Letra alloc] initWithPalavra:@"Zoo" andImagem:nil]];
+    [_letras addObject: [[Letra alloc] initWithPalavra:@"Elefante" andImagem:[UIImage imageNamed:@"e"]]];
+    [_letras addObject: [[Letra alloc] initWithPalavra:@"Foca" andImagem:[UIImage imageNamed:@"f"]]];
+    [_letras addObject: [[Letra alloc] initWithPalavra:@"Gelo" andImagem:[UIImage imageNamed:@"g"]]];
+    [_letras addObject: [[Letra alloc] initWithPalavra:@"Helicóptero" andImagem:[UIImage imageNamed:@"h"]]];
+    [_letras addObject: [[Letra alloc] initWithPalavra:@"Ilha" andImagem:[UIImage imageNamed:@"i"]]];
+    [_letras addObject: [[Letra alloc] initWithPalavra:@"Jabuti" andImagem:[UIImage imageNamed:@"j"]]];
+    [_letras addObject: [[Letra alloc] initWithPalavra:@"Lhama" andImagem:[UIImage imageNamed:@"l"]]];
+    [_letras addObject: [[Letra alloc] initWithPalavra:@"Macaco" andImagem:[UIImage imageNamed:@"m"]]];
+    [_letras addObject: [[Letra alloc] initWithPalavra:@"Navio" andImagem:[UIImage imageNamed:@"n"]]];
+    [_letras addObject: [[Letra alloc] initWithPalavra:@"Olhos" andImagem:[UIImage imageNamed:@"o"]]];
+    [_letras addObject: [[Letra alloc] initWithPalavra:@"Pato" andImagem:[UIImage imageNamed:@"p"]]];
+    [_letras addObject: [[Letra alloc] initWithPalavra:@"Queijo" andImagem:[UIImage imageNamed:@"q"]]];
+    [_letras addObject: [[Letra alloc] initWithPalavra:@"Rato" andImagem:[UIImage imageNamed:@"r"]]];
+    [_letras addObject: [[Letra alloc] initWithPalavra:@"Sapo" andImagem:[UIImage imageNamed:@"s"]]];
+    [_letras addObject: [[Letra alloc] initWithPalavra:@"Tatu" andImagem:[UIImage imageNamed:@"t"]]];
+    [_letras addObject: [[Letra alloc] initWithPalavra:@"Unicórnio" andImagem:[UIImage imageNamed:@"u"]]];
+    [_letras addObject: [[Letra alloc] initWithPalavra:@"Vaca" andImagem:[UIImage imageNamed:@"v"]]];
+    [_letras addObject: [[Letra alloc] initWithPalavra:@"Xícara" andImagem:[UIImage imageNamed:@"x"]]];
+    [_letras addObject: [[Letra alloc] initWithPalavra:@"Zoológico" andImagem:[UIImage imageNamed:@"z"]]];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -176,7 +177,6 @@ CGFloat centerView;
 }
 
 -(void)viewWillUnload:(BOOL)animated{
-    LetraView *lv = [LetraView sharedInstance];
     lv.index--;
 }
 
@@ -185,24 +185,24 @@ CGFloat centerView;
 }
 
 -(void)animateThis1:(UIView*)el posicao:(CGRect)pos duration:(float)duration{
-    CGPoint center = el.center;
     
     [UIView animateWithDuration:duration delay:0.1 options: 0 //UIViewAnimationCurveEaseIn
                      animations:^{
                          el.frame = pos; //nova posição/tamanho
-//                         imageView.frame = CGRectMake(centerView-100, 220, 200, 180)
-//                         CGFloat x = el.
-//                         CGPoint center = [CGPointMake(x, y)]
                      }
                      completion:nil];
+}
+
+-(void) navigationBar:(UINavigationBar *)navigationBar didPopItem:(UINavigationItem *)item{
+    lv.index++;
 }
 
 -(void)next:(id)sender {    //retorna o próximo
     
     //passar parametros para o metodo [novo: obj]
-    LetraView *lv = [LetraView sharedInstance];
     
     Letra *letra = [lv.letras objectAtIndex: lv.index];
+    lv.index++;
     
     [self.navigationController pushViewController: [self novo:letra] animated:YES];
     
@@ -213,7 +213,6 @@ CGFloat centerView;
 -(void)previous:(id)sender {    //retorna o anterior # Não está sendo chamado ainda
     
     //passar parametros para o metodo [novo: obj]
-    LetraView *lv = [LetraView sharedInstance];
     
     if(lv.index > 0)
         lv.index--;
